@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan Privasi - Auto Absen</title>
+<meta name="description" content="Kebijakan privasi aplikasi Auto Absen (fi.dev.autoabsen).">
+<style>
+:root{--bg:#f6f7ff;--card:#fff;--text:#111a33;--muted:#5a6482;--line:#dfe2f2;--accent:#3f51f5}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1226;--card:#111a33;--text:#e6e9fa;--muted:#a6afcf;--line:#26325a;--accent:#8c9bff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:linear-gradient(135deg,#0b1b3a,#3f51f5);color:#fff;padding:40px 20px}
+header div,main{max-width:760px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:28px;font-weight:600}
+header p{margin:0;opacity:.85}
+main{padding:24px 20px 56px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:0 0 16px}
+h2{margin:0 0 8px;font-size:19px}
+h3{margin:18px 0 6px;font-size:16px}
+p,li{color:var(--text)}
+.muted{color:var(--muted);font-size:14px}
+ul{padding-left:20px;margin:8px 0}
+a{color:var(--accent)}
+nav a{margin-right:14px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<header><div>
+<h1>Auto Absen</h1>
+<p>Kebijakan Privasi / Privacy Policy &middot; fi.dev.autoabsen</p>
+</div></header>
+<main>
+<nav class="muted" style="margin-bottom:16px"><a href="#id">Bahasa Indonesia</a><a href="#en">English</a></nav>
+
+<section id="id">
+<h2>Kebijakan Privasi (Bahasa Indonesia)</h2>
+<p class="muted">Terakhir diperbarui: 17 November 2026</p>
+<p>Auto Absen adalah aplikasi Android pribadi yang <strong>tidak dirilis untuk publik</strong>: hanya dibagikan kepada sejumlah penguji terbatas. Aplikasi ini membantu penggunanya melakukan Serve On dan Serve Off, melihat kalender kehadiran, mengoreksi service, dan menjadwalkan absen otomatis di iServe milik perusahaan penggunanya. <strong>Aplikasi ini tidak resmi dan tidak berafiliasi dengan AG Group maupun pengembang iServe.</strong> Pengguna wajib memakai akun iServe miliknya sendiri dan mematuhi aturan perusahaannya.</p>
+
+<h3>Prinsip utama</h3>
+<ul>
+<li>Pengembang <strong>tidak memiliki server</strong> dan <strong>tidak mengumpulkan, menyimpan, atau menerima</strong> data Anda.</li>
+<li>Tidak ada iklan, analitik, pelacak, maupun pelaporan crash dari pihak ketiga.</li>
+<li>Semua data aplikasi tersimpan di perangkat Anda. Data hanya dikirim ke iServe, sebagai permintaan dari Anda sendiri.</li>
+</ul>
+
+<h3>Data yang diproses</h3>
+<table>
+<tr><th>Data</th><th>Untuk apa</th><th>Penyimpanan</th></tr>
+<tr><td>Username dan password iServe</td><td>Login ke iServe</td><td>Dikirim hanya ke iServe. Disimpan di perangkat, terenkripsi, hanya jika Anda mengaktifkan &ldquo;Ingat saya&rdquo;.</td></tr>
+<tr><td>Kode verifikasi 2 langkah (TOTP)</td><td>Menyelesaikan login</td><td>Dikirim ke iServe. Tidak disimpan.</td></tr>
+<tr><td>Token sesi, nama, NPK, atasan</td><td>Tetap login dan mengisi form</td><td>Di perangkat, terenkripsi. Dihapus saat keluar atau sesi berakhir.</td></tr>
+<tr><td>Data kerja (Serve On/Off, koreksi, kehadiran, profil)</td><td>Menampilkan dan mengirim absen sesuai perintah atau jadwal Anda</td><td>Dibaca dari dan dikirim ke iServe. Tidak disimpan oleh pengembang.</td></tr>
+<tr><td>Pengaturan otomatisasi (jam, hari kerja, pilihan Serve Group dan Activity, hari cuti)</td><td>Menjalankan absen otomatis</td><td>Di perangkat Anda.</td></tr>
+</table>
+
+<h3>Layanan pihak ketiga</h3>
+<ul>
+<li><strong>iServe (iserveu.ag-it.com):</strong> tujuan semua permintaan absen dan login. Penanganan data di sana tunduk pada kebijakan perusahaan Anda dan penyedia iServe.</li>
+<li><strong>Kalender hari libur publik Google (calendar.google.com):</strong> daftar libur nasional diunduh dari sini. Tidak ada data pribadi yang dikirim, tetapi Google dapat melihat alamat IP perangkat seperti pada setiap permintaan internet.</li>
+</ul>
+
+<h3>Izin Android</h3>
+<ul>
+<li><code>INTERNET</code>: berkomunikasi dengan iServe dan kalender libur.</li>
+<li><code>POST_NOTIFICATIONS</code>: memberi tahu hasil absen otomatis (berhasil atau gagal). Notifikasi dibuat di perangkat.</li>
+</ul>
+<p>Absen otomatis berjalan di latar belakang lewat penjadwal sistem Android. Cadangan otomatis Android (backup) dinonaktifkan untuk aplikasi ini, sehingga data tidak ikut tercadangkan ke akun Google.</p>
+
+<h3>Penghapusan data</h3>
+<ul>
+<li>Keluar dari aplikasi menghapus token sesi.</li>
+<li>Mematikan &ldquo;Ingat saya&rdquo; menghapus username dan password tersimpan.</li>
+<li>Menghapus data aplikasi di Pengaturan Android atau mencopot pemasangan menghapus semua data.</li>
+</ul>
+
+<h3>Anak-anak</h3>
+<p>Aplikasi ini hanya untuk penguji terbatas yang merupakan karyawan, dan tidak ditujukan bagi anak-anak.</p>
+
+<h3>Perubahan dan kontak</h3>
+<p>Kebijakan ini dapat diperbarui, dan tanggal pembaruan tercantum di atas. Pertanyaan atau permintaan dapat disampaikan melalui <a href="https://github.com/mfirmansyahidris/auto-absen-public/issues">GitHub Issues</a>.</p>
+</section>
+
+<section id="en">
+<h2>Privacy Policy (English)</h2>
+<p class="muted">Last updated: 17 November 2026</p>
+<p>Auto Absen is a personal Android app that is <strong>not released to the public</strong>: it is shared only with a small, limited group of testers. It helps its user serve on and off, view an attendance calendar, correct services, and schedule automatic attendance on the iServe system of the user's own employer. <strong>It is unofficial and not affiliated with AG Group or the makers of iServe.</strong> You must use your own iServe account and follow your employer's rules.</p>
+
+<h3>Key points</h3>
+<ul>
+<li>The developer runs <strong>no server</strong> and does <strong>not collect, store, or receive</strong> your data.</li>
+<li>No ads, analytics, trackers, or third-party crash reporting.</li>
+<li>All app data stays on your device. Data is only sent to iServe, as requests made by you.</li>
+</ul>
+
+<h3>Data processed</h3>
+<table>
+<tr><th>Data</th><th>Purpose</th><th>Storage</th></tr>
+<tr><td>iServe username and password</td><td>Signing in to iServe</td><td>Sent only to iServe. Kept on the device, encrypted, only if you turn on &ldquo;Remember me&rdquo;.</td></tr>
+<tr><td>Two-step verification code (TOTP)</td><td>Completing sign-in</td><td>Sent to iServe. Not stored.</td></tr>
+<tr><td>Session token, name, employee number, supervisor</td><td>Staying signed in, filling forms</td><td>On the device, encrypted. Removed on sign-out or when the session ends.</td></tr>
+<tr><td>Work data (Serve On/Off, corrections, attendance, profile)</td><td>Showing and sending attendance on your command or schedule</td><td>Read from and sent to iServe. Not stored by the developer.</td></tr>
+<tr><td>Automation settings (times, weekdays, Serve Group and Activity choices, leave days)</td><td>Running automatic attendance</td><td>On your device.</td></tr>
+</table>
+
+<h3>Third parties</h3>
+<ul>
+<li><strong>iServe (iserveu.ag-it.com):</strong> the destination of all login and attendance requests. Handling there is governed by your employer and the iServe provider.</li>
+<li><strong>Google public holiday calendar (calendar.google.com):</strong> national holidays are downloaded from it. No personal data is sent, but Google can see the device's IP address as with any internet request.</li>
+</ul>
+
+<h3>Android permissions</h3>
+<ul>
+<li><code>INTERNET</code>: to talk to iServe and the holiday calendar.</li>
+<li><code>POST_NOTIFICATIONS</code>: to tell you the result of automatic attendance. Notifications are created on the device.</li>
+</ul>
+<p>Automatic attendance runs in the background through Android's job scheduler. Android auto backup is turned off for this app, so its data is not backed up to your Google account.</p>
+
+<h3>Deleting data</h3>
+<ul>
+<li>Signing out removes the session token.</li>
+<li>Turning off &ldquo;Remember me&rdquo; removes the saved username and password.</li>
+<li>Clearing the app's data in Android settings, or uninstalling, removes everything.</li>
+</ul>
+
+<h3>Children</h3>
+<p>The app is only for a limited group of testers who are employees, and is not directed to children.</p>
+
+<h3>Changes and contact</h3>
+<p>This policy may be updated; the date above shows the latest version. Questions or requests can be sent through <a href="https://github.com/mfirmansyahidris/auto-absen-public/issues">GitHub Issues</a>.</p>
+</section>
+</main>
+</body>
+</html>
