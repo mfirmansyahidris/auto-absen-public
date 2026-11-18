@@ -37,13 +37,13 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 
 <section id="id">
 <h2>Kebijakan Privasi (Bahasa Indonesia)</h2>
-<p class="muted">Terakhir diperbarui: 18 November 2026</p>
+<p class="muted">Terakhir diperbarui: 19 November 2026</p>
 <p>Auto Absen adalah aplikasi Android pribadi yang <strong>tidak dirilis untuk publik</strong>: hanya dibagikan kepada sejumlah penguji terbatas. Aplikasi ini membantu penggunanya melakukan Serve On dan Serve Off, melihat kalender kehadiran, mengoreksi service, dan menjadwalkan absen otomatis di iServe milik perusahaan penggunanya. <strong>Aplikasi ini tidak resmi dan tidak berafiliasi dengan AG Group maupun pengembang iServe.</strong> Pengguna wajib memakai akun iServe miliknya sendiri dan mematuhi aturan perusahaannya.</p>
 
 <h3>Prinsip utama</h3>
 <ul>
 <li>Pengembang <strong>tidak memiliki server sendiri</strong> dan <strong>tidak menerima</strong> password, data kerja, atau data iServe Anda. Satu-satunya data yang disimpan di luar perangkat adalah <strong>username</strong> Anda pada daftar akses di Google Firebase.</li>
-<li>Tidak ada iklan, analitik, pelacak, maupun pelaporan crash dari pihak ketiga.</li>
+<li>Tidak ada iklan dan tidak ada pelacak iklan. Aplikasi memakai Google Firebase Analytics dan Crashlytics hanya untuk memahami pemakaian secara anonim dan memperbaiki crash. Tidak ada username, password, NPK, atau data kerja yang ikut dikirim.</li>
 <li>Semua data aplikasi tersimpan di perangkat Anda. Data hanya dikirim ke iServe, sebagai permintaan dari Anda sendiri.</li>
 </ul>
 
@@ -52,6 +52,8 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 <tr><th>Data</th><th>Untuk apa</th><th>Penyimpanan</th></tr>
 <tr><td>Username dan password iServe</td><td>Login ke iServe</td><td>Dikirim hanya ke iServe. Disimpan di perangkat, terenkripsi, hanya jika Anda mengaktifkan &ldquo;Ingat saya&rdquo;.</td></tr>
 <tr><td>Username (daftar akses)</td><td>Memeriksa apakah akun boleh memakai aplikasi, dan mendaftarkannya bila pendaftaran sedang dibuka</td><td>Disimpan di Cloud Firestore (Google), bersama ID Firebase anonim. Password tidak pernah dikirim ke sana. Dihapus atas permintaan.</td></tr>
+<tr><td>Peristiwa pemakaian anonim (misalnya login berhasil, Serve On/Off terkirim, hasil absen otomatis)</td><td>Memahami pemakaian dan menemukan masalah</td><td>Dikirim ke Firebase Analytics (Google) bersama ID instalasi Firebase. Tidak ada data pribadi di dalamnya. Tidak dikirim dari build pengembangan.</td></tr>
+<tr><td>Laporan crash (jenis error, jejak kode, model perangkat, versi Android dan aplikasi)</td><td>Memperbaiki crash</td><td>Dikirim ke Firebase Crashlytics (Google). Pesan error tidak dikirim, hanya jenis dan lokasinya.</td></tr>
 <tr><td>Kode verifikasi 2 langkah (TOTP)</td><td>Menyelesaikan login</td><td>Dikirim ke iServe. Tidak disimpan.</td></tr>
 <tr><td>Token sesi, nama, NPK, atasan</td><td>Tetap login dan mengisi form</td><td>Di perangkat, terenkripsi. Dihapus saat keluar atau sesi berakhir.</td></tr>
 <tr><td>Data kerja (Serve On/Off, koreksi, kehadiran, profil)</td><td>Menampilkan dan mengirim absen sesuai perintah atau jadwal Anda</td><td>Dibaca dari dan dikirim ke iServe. Tidak disimpan oleh pengembang.</td></tr>
@@ -61,7 +63,7 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 <h3>Layanan pihak ketiga</h3>
 <ul>
 <li><strong>iServe (iserveu.ag-it.com):</strong> tujuan semua permintaan absen dan login. Penanganan data di sana tunduk pada kebijakan perusahaan Anda dan penyedia iServe.</li>
-<li><strong>Google Firebase (Authentication anonim, Cloud Firestore, Remote Config):</strong> menyimpan daftar username yang boleh memakai aplikasi dan satu pengaturan pendaftaran. Google dapat melihat alamat IP perangkat dan ID instalasi Firebase seperti pada setiap layanan Firebase.</li>
+<li><strong>Google Firebase (Authentication anonim, Cloud Firestore, Remote Config, Analytics, Crashlytics):</strong> menyimpan daftar username yang boleh memakai aplikasi, pengaturan pendaftaran dan versi minimum, peristiwa pemakaian anonim, serta laporan crash. Google dapat melihat alamat IP perangkat dan ID instalasi Firebase seperti pada setiap layanan Firebase.</li>
 <li><strong>Kalender hari libur publik Google (calendar.google.com):</strong> daftar libur nasional diunduh dari sini. Tidak ada data pribadi yang dikirim, tetapi Google dapat melihat alamat IP perangkat seperti pada setiap permintaan internet.</li>
 </ul>
 
@@ -89,13 +91,13 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 
 <section id="en">
 <h2>Privacy Policy (English)</h2>
-<p class="muted">Last updated: 18 November 2026</p>
+<p class="muted">Last updated: 19 November 2026</p>
 <p>Auto Absen is a personal Android app that is <strong>not released to the public</strong>: it is shared only with a small, limited group of testers. It helps its user serve on and off, view an attendance calendar, correct services, and schedule automatic attendance on the iServe system of the user's own employer. <strong>It is unofficial and not affiliated with AG Group or the makers of iServe.</strong> You must use your own iServe account and follow your employer's rules.</p>
 
 <h3>Key points</h3>
 <ul>
 <li>The developer runs <strong>no server of their own</strong> and does <strong>not receive</strong> your password, work data, or iServe data. The only data kept off your device is your <strong>username</strong> on an access list in Google Firebase.</li>
-<li>No ads, analytics, trackers, or third-party crash reporting.</li>
+<li>No ads and no advertising trackers. The app uses Google Firebase Analytics and Crashlytics only to understand usage anonymously and fix crashes. No username, password, employee number, or work data is included.</li>
 <li>All app data stays on your device. Data is only sent to iServe, as requests made by you.</li>
 </ul>
 
@@ -104,6 +106,8 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 <tr><th>Data</th><th>Purpose</th><th>Storage</th></tr>
 <tr><td>iServe username and password</td><td>Signing in to iServe</td><td>Sent only to iServe. Kept on the device, encrypted, only if you turn on &ldquo;Remember me&rdquo;.</td></tr>
 <tr><td>Username (access list)</td><td>Checking whether the account may use the app, and registering it while registration is open</td><td>Stored in Cloud Firestore (Google) together with an anonymous Firebase ID. The password is never sent there. Deleted on request.</td></tr>
+<tr><td>Anonymous usage events (e.g. sign-in succeeded, Serve On/Off sent, automatic attendance result)</td><td>Understanding usage and finding problems</td><td>Sent to Firebase Analytics (Google) with the Firebase installation ID. Contains no personal data. Not sent from development builds.</td></tr>
+<tr><td>Crash reports (error type, stack trace, device model, Android and app version)</td><td>Fixing crashes</td><td>Sent to Firebase Crashlytics (Google). Error messages are not sent, only the type and location.</td></tr>
 <tr><td>Two-step verification code (TOTP)</td><td>Completing sign-in</td><td>Sent to iServe. Not stored.</td></tr>
 <tr><td>Session token, name, employee number, supervisor</td><td>Staying signed in, filling forms</td><td>On the device, encrypted. Removed on sign-out or when the session ends.</td></tr>
 <tr><td>Work data (Serve On/Off, corrections, attendance, profile)</td><td>Showing and sending attendance on your command or schedule</td><td>Read from and sent to iServe. Not stored by the developer.</td></tr>
@@ -113,7 +117,7 @@ th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertic
 <h3>Third parties</h3>
 <ul>
 <li><strong>iServe (iserveu.ag-it.com):</strong> the destination of all login and attendance requests. Handling there is governed by your employer and the iServe provider.</li>
-<li><strong>Google Firebase (anonymous Authentication, Cloud Firestore, Remote Config):</strong> stores the list of usernames allowed to use the app and one registration setting. Google can see the device's IP address and Firebase installation ID, as with any Firebase service.</li>
+<li><strong>Google Firebase (anonymous Authentication, Cloud Firestore, Remote Config, Analytics, Crashlytics):</strong> stores the list of usernames allowed to use the app, the registration and minimum-version settings, anonymous usage events, and crash reports. Google can see the device's IP address and Firebase installation ID, as with any Firebase service.</li>
 <li><strong>Google public holiday calendar (calendar.google.com):</strong> national holidays are downloaded from it. No personal data is sent, but Google can see the device's IP address as with any internet request.</li>
 </ul>
 
